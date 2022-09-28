@@ -1,9 +1,9 @@
 import request from "supertest";
 
-import app from "@/app";
-import { dbConnection } from "@/ormconfig";
+import app from "../app";
+import { dbConnection } from "../ormconfig";
 
-var PORT = process.env.PORT || '3001';
+const PORT = process.env.PORT || '3001';
 
 let connection: any, server: any;
 
@@ -18,9 +18,9 @@ afterAll(done => {
   done();
 });
 
-describe('Errors tests', () => {
-  it('get errors', async () => {
-    const response = await request(app).get('/api/v1/errors');
+describe('Users tests', () => {
+  it('get users', async () => {
+    const response = await request(app).get('/api/v1/users');
     expect(response.statusCode).toBe(200);
     expect(response.body).toStrictEqual([]);
   });

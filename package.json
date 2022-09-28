@@ -85,7 +85,7 @@
     "node": "14.16.1"
   },
   "keywords": [],
-  "author": "Pablo Bullor",
+  "author": "Kevin Efraim",
   "license": "ISC",
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json",
