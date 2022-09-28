@@ -1,0 +1,26 @@
+version: '3.3'
+services:
+  mysql:
+    image: mysql:latest
+    restart: always
+    cap_add:
+      - SYS_NICE
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin
+    environment:
+      - PMA_HOST=${PMA_HOST}
+      - PMA_PORT=${PMA_PORT}
+      - PMA_USER=${PMA_USER}
+      - PMA_PASSWORD=${PMA_PASSWORD}
+    ports:
+      - 5050:80
+volumes:
+  mysql_data:
+    driver: local
