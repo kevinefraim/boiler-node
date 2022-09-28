@@ -6,8 +6,8 @@ services:
     cap_add:
       - SYS_NICE
     environment:
-      - MYSQL_DATABASE=${MYSQL_DATABASE}
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_ROOT_PASSWORD=${DB_PASS}
     ports:
       - 3306:3306
     volumes:
@@ -16,9 +16,9 @@ services:
     image: phpmyadmin
     environment:
       - PMA_HOST=${PMA_HOST}
-      - PMA_PORT=${PMA_PORT}
-      - PMA_USER=${PMA_USER}
-      - PMA_PASSWORD=${PMA_PASSWORD}
+      - PMA_PORT=${DB_PORT}
+      - PMA_USER=${DB_USER}
+      - PMA_PASSWORD=${DB_PASS}
     ports:
       - 5050:80
 volumes:
