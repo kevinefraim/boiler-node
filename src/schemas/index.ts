@@ -1,1 +1,1 @@
-export { errorSchema } from './Error.schema';
+export { userSchema } from './User.schema';

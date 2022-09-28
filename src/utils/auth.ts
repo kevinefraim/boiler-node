@@ -1,9 +1,7 @@
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
-const dotenv = require('dotenv-override');
-dotenv.config({ override: true });
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
-const AWS = require('aws-sdk');
+const dotenv = require('dotenv-override').config({ override: true });
 
 export const cryptPass = (password: string) => {
   const salt = bcrypt.genSaltSync(10);
@@ -20,11 +18,6 @@ export interface userTokenPayload {
   email: string;
   firstName: string;
   lastName: string;
-  phone: string;
-  isAdmin: boolean;
-  address: string;
-  deviceToken: string;
-  loginType?: string;
 }
 
 export const createJwt = (user: userTokenPayload) => {
@@ -40,7 +33,7 @@ export const createJwt = (user: userTokenPayload) => {
       (error, token) => {
         if (error) {
           console.warn(error);
-          reject('No se generó el token');
+          reject('Token did not generate');
         }
         resolve(token);
       },

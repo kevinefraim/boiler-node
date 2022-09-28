@@ -1,9 +1,9 @@
-import Stripe from 'stripe';
+import Stripe from "stripe";
 
 export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2020-08-27',
   appInfo: {
-    name: 'giftTime-stripe',
+    name: 'stripe-boiler-node',
     version: '0.0.2',
   },
   typescript: true,
