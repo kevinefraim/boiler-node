@@ -18,6 +18,9 @@
 
 ## Getting Started
 
+- Prior Docker installation required
+- Rename <code>.env.example</code> to <code>.env</code> and set the variables
+
 ### Clone the template:
 ```console
 $ git clone https://github.com/kevinefraim/boiler-node.git
