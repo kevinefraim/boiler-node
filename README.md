@@ -31,3 +31,17 @@ $ npm run db-start
 $ npm run watch
 ```
 
+
+## Migrations & Seeds
+- Set <code>NODE_ENV=production</code> in <code>.env</code> file
+- To generate a migration file and run it:
+```console
+$ npm run migration:generate
+$ npm run migration:up
+```
+- To clear the DB run: 
+```console
+$ npm run typeorm schema:drop
+```
+
+
