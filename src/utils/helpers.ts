@@ -1,7 +1,7 @@
+import { Errors } from "entities/Errors";
 import { NextFunction, Request, Response } from "express";
-
-import { Errors } from "@/entities/Errors";
-import { AppDataSource } from "@/ormconfig";
+import { AppDataSource } from "ormconfig";
+import { findOne } from "services";
 
 const dotenv = require('dotenv-override').config({ override: true });
 
@@ -40,9 +40,7 @@ export class Exception extends Error {
 
 export const fetchError = async (code: number) => {
   try {
-    return await AppDataSource.manager.findOne(Errors, {
-      where: { code },
-    });
+    return await findOne(Errors, { where: { code } });
   } catch (error) {
     return null;
   }

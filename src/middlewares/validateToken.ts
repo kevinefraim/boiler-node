@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
-
-import { customError, Exception } from "@/utils/helpers";
+import { customError, Exception } from "utils/helpers";
 
 const allowedPaths = [
   'adminLogin',

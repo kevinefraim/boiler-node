@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.deleteUser = exports.getUserById = exports.updateUser = exports.registerUser = exports.getUsers = void 0;
+const Users_Services_1 = require("services/Users.Services");
+const getUsers = async (req, res) => res.json(await (0, Users_Services_1.getAllUsers)());
+exports.getUsers = getUsers;
+const registerUser = async (req, res) => res.json(await (0, Users_Services_1.registerOneUser)(req.body));
+exports.registerUser = registerUser;
+const updateUser = async (req, res) => res.json(await (0, Users_Services_1.updateOneUser)(res.locals.item, req.body));
+exports.updateUser = updateUser;
+const getUserById = async (req, res) => res.json(await (0, Users_Services_1.getOneUser)(res.locals.item));
+exports.getUserById = getUserById;
+const deleteUser = async (req, res) => res.json(await (0, Users_Services_1.deleteOneUser)(res.locals.item));
+exports.deleteUser = deleteUser;

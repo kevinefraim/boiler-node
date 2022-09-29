@@ -30,7 +30,7 @@ app.use(
     }
   },
 );
-app.use(morgan('dev')); //logging
+app.use(morgan('dev'));
 
 app.get('/', (req, res) => res.send('Boiler NodeJS - Kevin Efraim'));
 
@@ -50,5 +50,3 @@ app.listen(PORT, () =>
 );
 
 export default app;
-
-module.exports = app;

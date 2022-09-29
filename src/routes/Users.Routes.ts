@@ -1,16 +1,15 @@
-import { Router } from "express";
-
 import {
   deleteUser,
   getUserById,
   getUsers,
   registerUser,
   updateUser
-} from "@/controllers/Users.Controller";
-import { Users } from "@/entities";
-import { validateId, validateSchema } from "@/middlewares";
-import { userSchema } from "@/schemas";
-import { safe } from "@/utils/helpers";
+} from "controllers/Users.Controller";
+import { Users } from "entities";
+import { Router } from "express";
+import { validateId, validateSchema } from "middlewares";
+import { userSchema } from "schemas";
+import { safe } from "utils/helpers";
 
 export const routerUsers = Router();
 const URL = '/api/v1/users';

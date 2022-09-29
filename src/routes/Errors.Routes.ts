@@ -1,7 +1,6 @@
+import { getErrors } from "controllers/Errors.controller";
 import { Router } from "express";
-
-import { getErrors } from "@/controllers/Errors.controller";
-import { safe } from "@/utils/helpers";
+import { safe } from "utils/helpers";
 
 export const routerErrors = Router();
 
