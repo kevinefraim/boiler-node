@@ -1,7 +1,6 @@
+import app from "app";
+import { dbConnection } from "ormconfig";
 import request from "supertest";
-
-import app from "../app";
-import { dbConnection } from "../ormconfig";
 
 const PORT = process.env.PORT || '3001';
 
